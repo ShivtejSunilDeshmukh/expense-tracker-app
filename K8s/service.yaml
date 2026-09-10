@@ -6,13 +6,13 @@ metadata:
   namespace: expense-tracker
 
 spec:
-
-  type: ClusterIP
+  type: LoadBalancer
 
   selector:
     app: expense-tracker
 
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 80
       targetPort: 80
