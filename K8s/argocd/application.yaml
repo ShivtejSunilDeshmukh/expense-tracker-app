@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: expense-tracker
+  namespace: argocd
+
+spec:
+
+  # ==========================================================
+  # Git repository containing our Kubernetes manifests
+  # ==========================================================
+
+  source:
+    repoURL: https://github.com/ShivtejSunilDeshmukh/expense-tracker-app.git
+    targetRevision: main
+    path: K8s
+
+  # ==========================================================
+  # Where Argo CD should deploy the application
+  # ==========================================================
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: expense-tracker
+
+  # ==========================================================
+  # Sync policy
+  # ==========================================================
+
+  syncPolicy:
+
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=false
