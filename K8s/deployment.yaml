@@ -23,7 +23,7 @@ spec:
       containers:
         - name: expense-tracker
 
-          image: 720204292745.dkr.ecr.ap-south-1.amazonaws.com/ssd-argocd-eks:877d56b41b2214c8263a819a1e6ad554b08865ba
+          image: 720204292745.dkr.ecr.ap-south-1.amazonaws.com/ssd-argocd-eks:6b23458067397b53a29d970e3b253404087df423
 
           ports:
             - containerPort: 80
