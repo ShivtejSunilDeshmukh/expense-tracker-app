@@ -7,8 +7,11 @@ metadata:
 
 spec:
 
+  # Argo CD project
+  project: default
+
   # ==========================================================
-  # Git repository containing our Kubernetes manifests
+  # Git repository containing Kubernetes manifests
   # ==========================================================
 
   source:
@@ -17,7 +20,7 @@ spec:
     path: K8s
 
   # ==========================================================
-  # Where Argo CD should deploy the application
+  # Kubernetes destination
   # ==========================================================
 
   destination:
@@ -25,7 +28,7 @@ spec:
     namespace: expense-tracker
 
   # ==========================================================
-  # Sync policy
+  # Automatic GitOps synchronization
   # ==========================================================
 
   syncPolicy:
